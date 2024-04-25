@@ -10,11 +10,14 @@ function App() {
   return (
     <>
       <Box1Container></Box1Container>
+
       <Box2Container></Box2Container>
       <Box3Container></Box3Container>
       <Box4container></Box4container>
       <Box5Container />
       <Box6container />
+
+      {/* <div className="w-full bg-red-100"></div> */}
 
       {/* <StarCanvas /> */}
     </>

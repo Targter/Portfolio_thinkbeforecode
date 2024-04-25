@@ -7,8 +7,8 @@ const Box4container = () => {
   console.log(techimg);
   return (
     <>
-      <div className="box4container">
-        <div className="ballscontainer">
+      <div className="h-auto w-full bg-black flex justify-center relative pt-24 p-2 sm:pl-11">
+        <div className="w-4/5 h-auto flex md:ml-28 md:mt-24 mt-14 justify-center flex-wrap gap-4">
           {techimg.map((item) => (
             <Box4Geometry imgUrl={item.imgurl} key={item.name} />
           ))}
