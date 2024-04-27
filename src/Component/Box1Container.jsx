@@ -13,7 +13,7 @@ import { Canvas } from "@react-three/fiber";
 const Box1Container = () => {
   return (
     <>
-      <div className="heroContainer overflow-hidden h-auto xl:h-screen w-full max-w-screen relative pl-2 sm:pl-11">
+      <div className="heroContainer overflow-hidden h-screen w-full max-w-screen relative pl-2 md:pl-11">
         <video
           src="\video\blackhole.webm"
           // className="navvideo "
@@ -24,12 +24,12 @@ const Box1Container = () => {
         ></video>
 
         <motion.div
-          className="mt-44 z-10  w-full flex justify-between ml-11 sm:ml-24"
+          className="mt-44 z-10  w-full flex justify-start sm:justify-between ml-5 md:ml-24"
           initial={"hidden"}
           animate={"visible"}
         >
           {/* <div className="heroitemcontentcontainer "> */}
-          <div className=" h-full w-2/3 flex flex-col py-10 ">
+          <div className=" h-full  w-full sm:w-2/3 flex flex-col py-10 ">
             {/* <motion.div className="resumeName" variants={slideInFromTop}> */}
             {/* <motion.div className="resumeName flex "></motion.div> */}
             <motion.div className="flex h-11 text-white  border-2 w-28 md:w-56  items-center rounded-lg bg-blue-900 ">
@@ -40,12 +40,12 @@ const Box1Container = () => {
             </motion.div>
 
             {/* <motion.div className="Profession" variants={slideInFromLeft(0.6)}></motion.div> */}
-            <motion.div className="w-5/6  text-4xl md:text-7xl text-white mt-7">
+            <motion.div className="w-11/12 md:w-5/6  text-4xl md:text-7xl text-white mt-7">
               Providing <span className="textcolor">the best</span> project
               experience
             </motion.div>
             <motion.div
-              className="text-white my-8 w-60 md:w-96 md:my-4"
+              className="text-white my-8 w-11/12 sm:w-60 md:w-96 md:my-4"
               // variants={slideInFromLeft(0.8)}
             >
               I'm a Full Stack Software Engineer with experience in Website,

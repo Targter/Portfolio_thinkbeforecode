@@ -4,7 +4,7 @@ const Box2Container = () => {
   return (
     <>
       <div className="h-auto w-full flex flex-col items-start p-2 sm:p-11 bg-black ">
-        <div className="ml-11 md:ml-24 mt-3 md:mt-8 h-auto">
+        <div className="ml-5 sm:ml-11 md:ml-24 mt-3 md:mt-8 h-auto">
           <div className=" text-sm text-white md:text-lg ">INTRODUCTION</div>
           <div className="md:text-6xl text-2xl text-white md:mt-2.5 mt-1.5 md:mb-4 mb-1.5 font-semibold md:font-extrabold ">
             Overview

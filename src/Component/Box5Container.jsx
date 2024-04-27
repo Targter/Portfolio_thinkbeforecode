@@ -2,7 +2,7 @@ const Box5Container = () => {
   return (
     <>
       <div className="w-full h-auto flex items-center justify-center text-white bg-black md:p-24 sm:pl-11">
-        <div className="w-11/12 h-auto flex flex-col md:mt-24 mt-14 ml-11 md:ml-24 justify-center gap-2">
+        <div className="w-11/12 h-auto flex flex-col md:mt-24 mt-14 sm:ml-11 ml-5  md:ml-24 justify-center gap-2">
           {" "}
           <div className="text-sm text-white md:text-lg">My Work</div>
           <div className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
