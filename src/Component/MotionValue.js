@@ -93,7 +93,7 @@ export const techimg = [
 export const textVariant = (delay) => {
   return {
     hidden: {
-      y: -50,
+      y: -100,
       opacity: 0,
     },
     show: {
@@ -101,7 +101,9 @@ export const textVariant = (delay) => {
       opacity: 1,
       transition: {
         type: "spring",
-        duration: 1.25,
+        damping: 20,
+        stiffness: 100,
+        duration: 1,
         delay: delay,
       },
     },
@@ -123,7 +125,9 @@ export const fadeIn = (direction, type, delay, duration) => {
         type: type,
         delay: delay,
         duration: duration,
-        ease: "easeOut",
+        ease: "easeIn",
+        damping: 20,
+        stiffness: 100,
       },
     },
   };
@@ -171,6 +175,7 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
   return {
     hidden: {},
     show: {
+      delay: 0,
       transition: {
         staggerChildren: staggerChildren,
         delayChildren: delayChildren || 0,

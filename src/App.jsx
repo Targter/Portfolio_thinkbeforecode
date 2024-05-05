@@ -9,14 +9,15 @@ import Box6container from "./Component/Box6Container";
 function App() {
   return (
     <>
-      <Box1Container></Box1Container>
+      <div className="w-full h-auto bg-black">
+        <Box1Container></Box1Container>
 
-      <Box2Container></Box2Container>
-      <Box3Container></Box3Container>
-      <Box4container></Box4container>
-      <Box5Container />
-      <Box6container />
-
+        <Box2Container></Box2Container>
+        <Box3Container></Box3Container>
+        <Box4container></Box4container>
+        <Box5Container />
+        <Box6container />
+      </div>
       {/* <div className="w-full bg-red-100"></div> */}
 
       {/* <StarCanvas /> */}
