@@ -12,7 +12,12 @@ const Ball = (prop) => {
   const [decal] = useTexture([prop.imgUrl]);
 
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
+    <Float
+      speed={2.75}
+      rotationIntensity={5}
+      floatIntensity={2}
+      renderOrder={9999}
+    >
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
@@ -35,7 +40,7 @@ const Ball = (prop) => {
 
 const Box4Geometry = ({ imgUrl }) => {
   return (
-    <Canvas frameloop="demand" dpr={[1, 2]}>
+    <Canvas frameloop="demand" dpr={[1, 2]} className="z-[9999] ">
       <Suspense fallback={null}>
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.1} />

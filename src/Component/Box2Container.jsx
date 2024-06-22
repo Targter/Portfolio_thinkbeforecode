@@ -2,7 +2,8 @@ import React from "react";
 // import Tilt from "react-tilt";
 import { Tilt } from "react-tilt";
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+import { motion } from "framer-motion-3d";
 import { services } from "./ALLData.js";
 import { fadeIn, textVariant } from "./MotionValue.js";
 import StarWrapper from "./StarWrapper.jsx";
@@ -41,35 +42,39 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <div className="text-sm text-white md:text-lg">My Work</div>
-        <div className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
-          Projects
-        </div>
-      </motion.div>
-      <motion.div
-        className="mt-9 w-2/4 md:text-[16px] text-sm text-white "
-        variants={fadeIn("", "", 0.6, 1)}
+      <div
+        className={`max-w-7xl mx-auto relative z-0 h-4/5 pl-28 pt-11 mb-5 text-white`}
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque
-        quaerat impedit exercitationem rerum? Atque delectus magni dicta beatae
-        sed expedita dignissimos aspernatur minima, dolorum doloribus neque
-        voluptates ipsam velit ducimus at aliquid voluptatem quasi amet iure
-        ipsa quia adipisci facere cum a? Aspernatur recusandae, doloribus
-        temporibus odit sapiente dolores provident hic facere harum similique,
-        magnam animi. Reprehenderit eos, et neque iure aspernatur
-      </motion.div>
-      <div className="mt-11 flex flex-wrap gap-10">
-        {services.map((service, index) => (
-          <ServiceCard
-            title={service.title}
-            index={index}
-            icon={service.icon}
-          />
-        ))}
+        <motion.div variants={textVariant()} className="z-0">
+          <div className="text-sm text-white md:text-lg">My Work</div>
+          <div className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
+            Projects
+          </div>
+        </motion.div>
+        <motion.div
+          className="mt-9 w-2/4 md:text-[16px] text-sm text-white "
+          variants={fadeIn("", "", 0.6, 1)}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
+          neque quaerat impedit exercitationem rerum? Atque delectus magni dicta
+          beatae sed expedita dignissimos aspernatur minima, dolorum doloribus
+          neque voluptates ipsam velit ducimus at aliquid voluptatem quasi amet
+          iure ipsa quia adipisci facere cum a? Aspernatur recusandae, doloribus
+          temporibus odit sapiente dolores provident hic facere harum similique,
+          magnam animi. Reprehenderit eos, et neque iure aspernatur
+        </motion.div>
+        <div className="mt-11 flex flex-wrap gap-10">
+          {services.map((service, index) => (
+            <ServiceCard
+              title={service.title}
+              index={index}
+              icon={service.icon}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
 };
-
-export default StarWrapper(About, "about");
+export default About;
+// export default StarWrapper(About, "about");
