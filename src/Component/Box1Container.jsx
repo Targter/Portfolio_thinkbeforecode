@@ -1,7 +1,7 @@
 import { Suspense, useLayoutEffect, useRef, useState } from "react";
 import Box1a from "./box1a";
 // import gsap from "gsap";
-import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -74,26 +74,26 @@ const Box1Container = () => {
                 <div class="hidden sm:ml-6 sm:block">
                   <div class="flex space-x-4">
                     <a
-                      href="#"
+                      href="#Home"
                       class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                       aria-current="page"
                     >
                       Dashboard
                     </a>
                     <a
-                      href="#"
+                      href="#Skills"
                       class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Skills
                     </a>
                     <a
-                      href="#"
+                      href="#WorkExperience"
                       class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Work Experience
                     </a>
                     <a
-                      href="#"
+                      href="#Projects"
                       class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Projects
@@ -123,11 +123,8 @@ const Box1Container = () => {
                       </a>{" "}
                     </li>
                     <li className="w-6 h-6">
-                      <a
-                        href="https://www.facebook.com/abhay.bansal.94214"
-                        target="_blank"
-                      >
-                        <FaFacebook className="w-[100%] h-[100%]" />
+                      <a href="https://github.com/Targter" target="_blank">
+                        <FaGithub className="w-[100%] h-[100%]" />
                       </a>
                     </li>
                   </ul>
@@ -142,26 +139,26 @@ const Box1Container = () => {
           >
             <div class="space-y-1 px-2 pb-3 pt-2">
               <a
-                href="#"
+                href="#Home"
                 class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
                 aria-current="page"
               >
                 Dashboard
               </a>
               <a
-                href="#"
+                href="#Skills"
                 class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Skills
               </a>
               <a
-                href="#"
+                href="#WorkExperience"
                 class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Work Experience
               </a>
               <a
-                href="#"
+                href="#Projects"
                 class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Projects

@@ -10,7 +10,7 @@ const Box4container = () => {
     <>
       <div className="flex flex-row flex-wrap justify-center lg:gap-10  gap-4 mt-11">
         {techimg.map((item) => (
-          <div className="lg:w-28 w-16 lg:h-28 h-16  z-[9999]">
+          <div className="lg:w-28 w-16 lg:h-28 h-16 ">
             <Box4Geometry imgUrl={item.imgurl} key={item.name} />
           </div>
         ))}
