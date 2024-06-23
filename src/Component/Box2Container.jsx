@@ -15,7 +15,7 @@ const ServiceCard = ({ index, title, icon }) => (
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: true, amount: 0.5 }}
-      className="w-64  p-[1px] rounded-[20px] bg-indigo-500 box2border"
+      className="lg:w-64 w-36  p-[2px] rounded-[20px] bg-indigo-500 box2border"
     >
       <div
         options={{
@@ -23,15 +23,15 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className="rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col box2border2"
+        className="rounded-[20px] py-5 px-12 lg:min-h-[280px] min-h-[200px] lg:mx-0 mx-auto flex justify-evenly items-center flex-col box2border2"
       >
         <img
           src={icon}
           alt="web-development"
-          className="w-16 h-16 object-contain"
+          className="lg:w-16 lg:h-16 w-9 h-9 object-contain"
         />
 
-        <h3 className="text-white text-[20px] font-bold text-center">
+        <h3 className="text-white lg:text-[20px] text-sm lg:font-bold font-light text-center">
           {title}
         </h3>
       </div>
@@ -43,16 +43,19 @@ const About = () => {
   return (
     <>
       <div
-        className={`max-w-7xl mx-auto relative z-0 h-4/5 pl-28 pt-11 mb-5 text-white overflow-hidden`}
+        className={`max-w-7xl w-[100%] mx-auto relative z-0 h-4/5 lg:pl-28  pl-2 pt-11 mb-5 text-white overflow-hidden `}
       >
-        <motion.div variants={textVariant()} className="z-0">
-          <div className="text-sm text-white md:text-lg">My Work</div>
+        <motion.div
+          variants={textVariant()}
+          className=" lg:flex-none flex flex-col items-center "
+        >
+          <div className="text-white md:text-lg text-sm ">My Work</div>
           <div className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
             Projects
           </div>
         </motion.div>
         <motion.div
-          className="mt-9 w-2/4 md:text-[16px] text-sm text-white "
+          className="mt-9 lg:w-2/4 w-full md:text-[16px] text-sm text-white text-justify lg:pr-0 pr-2 "
           variants={fadeIn("", "", 0.6, 1)}
         >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
@@ -63,7 +66,7 @@ const About = () => {
           temporibus odit sapiente dolores provident hic facere harum similique,
           magnam animi. Reprehenderit eos, et neque iure aspernatur
         </motion.div>
-        <div className="mt-11 flex flex-wrap gap-10">
+        <div className="mt-11 flex flex-wrap lg:gap-10 gap-5 lg:justify-start justify-center">
           {services.map((service, index) => (
             <ServiceCard
               title={service.title}

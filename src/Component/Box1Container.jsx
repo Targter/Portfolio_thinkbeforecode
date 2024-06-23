@@ -11,7 +11,7 @@ const Box1Container = () => {
         here we pass the menu option or nav bar
       </div>
       <div className="h-auto lg:w-auto w-[1000px] flex justify-center  flex-col lg:items-center items-start overflow-x-hidden z-50 text-white  ">
-        <div className="lg:w-[1100px] w-[100vw] lg:h-[530px] h-[calc(100vh-100px)] flex flex-col justify-start items-center gap-8 text-center  bg-red-800">
+        <div className="lg:w-[1100px] w-[100vw] lg:h-[530px] h-[calc(100vh-100px)] flex flex-col justify-start items-center gap-8 text-center">
           <div className=" w-[400px] lg:w-[500px] text-white lg:h-[90px] h-[20px] lg:text-3xl text-lg lg:mt-8 mt-3">
             Providing the best project experience
           </div>
