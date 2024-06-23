@@ -17,10 +17,14 @@ const Box1Container = () => {
     link.click();
     document.body.removeChild(link);
   };
-
+  const [showDropDown, SetDropDown] = useState(false);
+  const ButtonClick = () => {
+    SetDropDown(!showDropDown);
+    console.log(showDropDown);
+  };
   return (
     <>
-      <div className="dark:bg-[#2B2D42] h-auto w-full overflow-x-hidden fixed z-[999] text-white">
+      <div className="dark:bg-[#2B2D42] h-auto w-full overflow-x-hidden fixed z-[999] text-white mb-2">
         <nav class="bg-gray-800">
           <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
@@ -30,6 +34,7 @@ const Box1Container = () => {
                   class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                   aria-controls="mobile-menu"
                   aria-expanded="false"
+                  onClick={ButtonClick}
                 >
                   <span class="absolute -inset-0.5"></span>
                   <span class="sr-only">Open main menu</span>
@@ -131,7 +136,10 @@ const Box1Container = () => {
             </div>
           </div>
 
-          <div class="sm:hidden" id="mobile-menu">
+          <div
+            className={`sm:hidden ${showDropDown ? "" : "hidden"}`}
+            id="mobile-menu"
+          >
             <div class="space-y-1 px-2 pb-3 pt-2">
               <a
                 href="#"
@@ -162,12 +170,14 @@ const Box1Container = () => {
           </div>
         </nav>
       </div>
+
+      {/* mainbody */}
       <div
         className="h-auto lg:w-auto w-[1000px] flex lg:flex-row flex-col lg:items-center justify-start items-start overflow-hidden z-50 text-white mb-[120px] "
         id="Home"
       >
-        <div className="lg:w-[1100px] w-[100vw] lg:h-[530px] h-auto flex flex-col justify-start items-center gap-8 text-center lg:mt-[100px]">
-          <div className=" w-[400px] lg:w-[500px] text-white lg:h-[90px] h-[20px] lg:text-3xl text-lg lg:mt-8 mt-3">
+        <div className="lg:w-[1100px] w-[100vw] lg:h-[530px] h-auto flex flex-col justify-start items-center gap-8 text-center lg:mt-[100px] mt-[80px]">
+          <div className=" w-[400px] lg:w-[500px] text-white lg:h-[90px] h-[20px] lg:text-2xl text-sm lg:mt-8 mt-3">
             Providing the best project experience
           </div>
 
@@ -184,7 +194,7 @@ const Box1Container = () => {
               Download Resume
             </button>
           </div>
-          <div className="myinfo lg:w-3/12 w-full lg:h-[200px] h-auto text-sm text-center">
+          <div className="myinfo lg:w-3/12 w-full lg:h-[200px] h-auto text-sm text-center lg:p-0 p-2">
             I'm a Full Stack Software Engineer with experience in Website,
             Mobile, and Software development. Check out my projects and skills.
           </div>
