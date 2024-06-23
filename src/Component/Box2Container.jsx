@@ -47,9 +47,9 @@ const About = () => {
       >
         <motion.div
           variants={textVariant()}
-          className=" lg:flex-none flex flex-col items-center "
+          className=" lg:flex-none flex flex-col lg:items-start items-center "
         >
-          <div className="text-white md:text-lg text-sm ">My Work</div>
+          <div className="text-white md:text-lg text-sm">My Work</div>
           <div className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
             Projects
           </div>

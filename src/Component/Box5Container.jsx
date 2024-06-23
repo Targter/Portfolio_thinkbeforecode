@@ -19,9 +19,9 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className=" p-5 rounded-2xl sm:w-[360px] w-[full] bg-[rgb(21 16 48)] bgColor "
+        className="p-5  lg:rounded-2xl rounded-xl lg:w-[360px] w-[80%] bg-[rgb(21 16 48)] bgColor lg:ml-0 ml-8 lg:flex-none flex flex-col lg:items-start items-center"
       >
-        <div className="relative w-[full] h-[230px]">
+        <div className="relative lg:w-[full] w-[80px] lg:h-[230px] h-[120px]">
           <img
             src={image}
             alt="project_image"
@@ -36,13 +36,13 @@ const ProjectCard = ({
               <img
                 // src={github}
                 alt="source code"
-                className="w-1/2 h-1/2 object-contain"
+                className="w-1/2 h-1/2 object-contain lg:ml-0 ml-[120px]"
               />
             </div>
           </div>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 lg:text-start text-center">
           <h3 className="text-white font-bold text-[24px] ">{name}</h3>
           <p className="mt-2 text-stone-100 text-[14px]">{description}</p>
         </div>
@@ -64,7 +64,10 @@ const ProjectCard = ({
 const Box5Container = () => {
   return (
     <>
-      <motion.div variants={textVariant()} className="overflow-hidden">
+      <motion.div
+        variants={textVariant()}
+        className="overflow-hidden lg:flex-none flex flex-col lg:items-start items-center lg:mt-0 mt-11"
+      >
         <p className="text-sm text-white md:text-lg">My work</p>
         <h2 className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
           Projects.
@@ -74,8 +77,8 @@ const Box5Container = () => {
       <div className="w-full flex overflow-hidden">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-white overflow-hidden
-          "
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-white overflow-hidden lg:pl-0 pl-2 lg:text-start text-justify 
+          lg:pr-0 pr-2"
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -84,7 +87,7 @@ const Box5Container = () => {
           and manage projects effectively.
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7 overflow-hidden mb-11 ">
+      <div className="lg:mt-20 h-auto mt-10 flex flex-wrap  lg:gap-7 gap-5 mb-11 ">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

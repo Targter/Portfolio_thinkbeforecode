@@ -20,7 +20,7 @@ const ExperienceCard = ({ experience }) => {
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
-        <div className="flex justify-center items-center w-full h-full">
+        <div className="flex justify-center items-center lg:w-full h-full">
           <img
             src={experience.icon}
             alt={experience.company_name}
@@ -28,22 +28,25 @@ const ExperienceCard = ({ experience }) => {
           />
         </div>
       }
+      className="lg:w-full w-[95%] h-auto"
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+        <h3 className="text-white lg:text-[24px] text-lg font-bold">
+          {experience.title}
+        </h3>
         <p
-          className="text-secondary text-[16px] font-semibold"
+          className="text-secondary lg:text-[16px] text-sm font-semibold"
           style={{ margin: 0 }}
         >
           {experience.company_name}
         </p>
       </div>
 
-      <ul className="mt-5 list-disc ml-5 space-y-2">
+      <ul className="lg:mt-5 mt-3 list-disc lg:ml-5 ml-2 space-y-2">
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
+            className="text-white-100 lg:text-[14px] text-[12px] pl-1 tracking-wider"
           >
             {point}
           </li>
@@ -57,15 +60,15 @@ const Box3Container = () => {
   return (
     <>
       <motion.div
-        className="w-full h-auto bg-black relative pt-24 sm:pl-11 pl-2  "
+        className="w-full h-auto bg-black relative lg:pt-24 pt-0 lg:pl-11 pl-2  "
         variants={staggerContainer(0.2, 0.5)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.15 }}
       >
-        <motion.div className="w-4/5 h-auto flex flex-col items-center ml-5 sm:ml-11 md:ml-24 mt-11">
+        <motion.div className="lg:w-4/5 w-full h-auto flex flex-col items-center ml-1 lg:ml-11 md:ml-24 mt-11">
           <motion.div variants={textVariant()}>
-            <div className="text-sm text-white md:text-lg">
+            <div className="text-sm text-white md:text-lg ">
               WHAT I HAVE DONE SO FAR
             </div>
             <div className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
@@ -74,9 +77,8 @@ const Box3Container = () => {
           </motion.div>
           <div className="flex md:mt-9 mt-5 flex-wrap flex-col items-start md:items-center w-full"></div>
         </motion.div>
-        {/*  */}
 
-        <div className="mt-20 flex flex-col">
+        <div className="lg:mt-20 mt-8 flex flex-col">
           <VerticalTimeline>
             {experiences.map((experience, index) => (
               <ExperienceCard
