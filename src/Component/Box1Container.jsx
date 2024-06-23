@@ -11,13 +11,13 @@ const Box1Container = () => {
         here we pass the menu option or nav bar
       </div>
       <div className="h-auto lg:w-auto w-[1000px] flex justify-center  flex-col lg:items-center items-start overflow-x-hidden z-50 text-white  ">
-        <div className="lg:w-[1100px] w-[100vw] lg:h-[530px] h-[calc(100vh-100px)] flex flex-col justify-start lg:items-center items-start lg:gap-8 gap-4 lg:text-center text-start  bg-red-800">
-          <div className="myinfo w-[400px] lg:w-[500px] text-white h-[90px] lg:text-3xl text-lg lg:mt-8 mt-3 lg:pl-0 pl-3">
+        <div className="lg:w-[1100px] w-[100vw] lg:h-[530px] h-[calc(100vh-100px)] flex flex-col justify-start items-center gap-8 text-center  bg-red-800">
+          <div className=" w-[400px] lg:w-[500px] text-white lg:h-[90px] h-[20px] lg:text-3xl text-lg lg:mt-8 mt-3">
             Providing the best project experience
           </div>
 
-          <div className="myinfo lg:w-10/12 w-full lg:h-[230px] h-[100px] lg:text-7xl text-4xl lg:pl-0 pl-3">
-            <span className="lg:ml-0 ml-[70px]">Full Stack</span>
+          <div className=" lg:w-10/12 w-full lg:h-[230px] h-[100px] lg:text-7xl text-4xl">
+            <span>Full Stack</span>
             {/* <span className="inline-block">
               <span className="w-[100px] h-[85px] inline-block">
                 <svg
@@ -47,7 +47,7 @@ const Box1Container = () => {
             I'm a Full Stack Software Engineer with experience in Website,
             Mobile, and Software development. Check out my projects and skills.
           </div> */}
-          <div className="bg-white h-[400px] w-full "></div>
+          <div className="bg-white lg:h-0 h-[400px] w-full "></div>
         </div>
       </div>
     </>
