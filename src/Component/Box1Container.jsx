@@ -43,10 +43,10 @@ const Box1Container = () => {
               Download Resume
             </button>
           </div>
-          {/* <div className="myinfo lg:w-3/12 w-1/2 h-[200px] lg:text-sm text-lg text-center lg:mt-0 mt-9 ">
+          <div className="myinfo lg:w-3/12 w-full lg:h-[200px] h-auto text-sm text-center">
             I'm a Full Stack Software Engineer with experience in Website,
             Mobile, and Software development. Check out my projects and skills.
-          </div> */}
+          </div>
           <div className="bg-white lg:h-0 h-[400px] w-full "></div>
         </div>
       </div>
