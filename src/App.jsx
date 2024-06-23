@@ -13,6 +13,7 @@ import Box3Container from "./Component/Box3Container";
 import Box4Container from "./Component/Box4Container";
 import Box5Container from "./Component/Box5Container";
 import Box6container from "./Component/Box6Container";
+import StarCanvas from "./Component/StarBackground";
 // import Box1a from "./Component/box1a";
 // i am trying to put a 3d model thats why i am doing this :
 function App() {
@@ -21,7 +22,7 @@ function App() {
   // console.log();
   return (
     <>
-      <div className="bg-black h-auto w-full overflow-hidden ">
+      <div className="bg-black h-auto w-full overflow-hidden containerr">
         {/* <Box1a></Box1a> */}
         {/* <Box4Container /> */}
         <Box1Container />
@@ -31,6 +32,7 @@ function App() {
         <Box5Container />
         <Box6container />
       </div>
+      <StarCanvas />
     </>
   );
 }

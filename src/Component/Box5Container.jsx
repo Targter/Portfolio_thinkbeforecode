@@ -19,9 +19,9 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="p-5  lg:rounded-2xl rounded-xl lg:w-[360px] w-[80%] bg-[rgb(21 16 48)] bgColor lg:ml-0 ml-8 lg:flex-none flex flex-col lg:items-start items-center"
+        className="p-5  lg:rounded-2xl rounded-xl lg:w-[360px] w-[80%] bg-[rgb(21 16 48)] bgColor lg:ml-0 ml-8 lg:flex-none flex flex-col lg:items-start items-center overflow-hidden"
       >
-        <div className="relative lg:w-[full] w-[80px] lg:h-[230px] h-[120px]">
+        <div className="relative lg:w-[100%] w-[80px] lg:h-[230px] h-[120px]">
           <img
             src={image}
             alt="project_image"

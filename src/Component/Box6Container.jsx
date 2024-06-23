@@ -2,8 +2,8 @@ const Box6container = () => {
   return (
     <>
       <div className=" w-full h-auto sm:h-screen flex items-center justify-start sm:justify-center text-white bg-black pt-24 pl-2  sm:pl-11 overflow-hidden">
-        <div className="w-10/12 md:w-10/12 h-full flex flex-col md:mt-24 mt-14 ml-5 sm:ml-11 md:ml-24 md:justify-center items-center md:items-start gap-2">
-          <div className="border-2 w-full md:w-9/12 h-11/12 p-8 flex flex-col justify-between text-white gap-3 md:gap-0 ">
+        <div className="w-10/12 md:w-10/12 h-full flex flex-col md:mt-24 mt-14 ml-5 sm:ml-11 md:ml-24 md:justify-center items-center md:items-start gap-2 ">
+          <div className="border-2 w-full md:w-9/12 h-11/12 p-8 flex flex-col justify-between text-white gap-3 md:gap-0 rounded-2xl ">
             <div className="text-sm md:text-lg">GET IN TOUCH</div>
             <div className="text-sm sm:text-lg md:text-3xl font-extrabold mt-3">
               CONTACT

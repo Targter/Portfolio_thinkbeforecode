@@ -5,9 +5,12 @@
 }
 
 .starcanvas {
-  height: 200vh;
-  width: 100%;
-  z-index: 600;
+  overflow-x: hidden;
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  inset: 0;
+  z-index: 3;
 }
 
 .box2border {
