@@ -15,7 +15,7 @@ const ServiceCard = ({ index, title, icon }) => (
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: true, amount: 0.5 }}
-      className="lg:w-64 w-36  p-[2px] rounded-[20px] bg-indigo-500 box2border"
+      className="lg:w-64 w-36  p-[2px] rounded-[20px] "
     >
       <div
         options={{
@@ -23,7 +23,7 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className="rounded-[20px] py-5 px-12 lg:min-h-[280px] min-h-[200px] lg:mx-0 mx-auto flex justify-evenly items-center flex-col box2border2"
+        className="rounded-[20px] py-5 px-12 lg:min-h-[280px] min-h-[200px] lg:mx-0 mx-auto flex justify-evenly items-center flex-col bg-[#2B2D42]"
       >
         <img
           src={icon}
@@ -43,11 +43,12 @@ const About = () => {
   return (
     <>
       <div
-        className={`max-w-7xl w-[100%] mx-auto relative z-0 h-4/5 lg:pl-28  pl-2 pt-11 mb-5 text-white overflow-hidden `}
+        className={`max-w-7xl w-[100%] mx-auto relative z-0 h-4/5 lg:pl-28  pl-2 pt-11 text-white overflow-hidden `}
       >
         <motion.div
           variants={textVariant()}
           className=" lg:flex-none flex flex-col lg:items-start items-center "
+          id="Projects"
         >
           <div className="text-white md:text-lg text-sm">My Work</div>
           <div className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
@@ -66,7 +67,7 @@ const About = () => {
           temporibus odit sapiente dolores provident hic facere harum similique,
           magnam animi. Reprehenderit eos, et neque iure aspernatur
         </motion.div>
-        <div className="mt-11 flex flex-wrap lg:gap-10 gap-5 lg:justify-start justify-center">
+        <div className="mt-11 flex flex-wrap lg:gap-10 gap-5 lg:justify-start justify-center pb-2 ">
           {services.map((service, index) => (
             <ServiceCard
               title={service.title}

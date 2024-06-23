@@ -22,7 +22,7 @@ function App() {
   // console.log();
   return (
     <>
-      <div className="bg-black h-auto w-full overflow-hidden containerr">
+      <div className="bg-[#000000] h-auto w-full overflow-hidden containerr">
         {/* <Box1a></Box1a> */}
         {/* <Box4Container /> */}
         <Box1Container />
@@ -32,7 +32,7 @@ function App() {
         <Box5Container />
         <Box6container />
       </div>
-      <StarCanvas />
+      {/* <StarCanvas /> */}
     </>
   );
 }

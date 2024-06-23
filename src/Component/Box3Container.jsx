@@ -64,6 +64,7 @@ const Box3Container = () => {
         variants={staggerContainer(0.2, 0.5)}
         initial="hidden"
         whileInView="show"
+        id="WorkExperience"
         viewport={{ once: true, amount: 0.15 }}
       >
         <motion.div className="lg:w-4/5 w-full h-auto flex flex-col items-center ml-1 lg:ml-11 md:ml-24 mt-11">

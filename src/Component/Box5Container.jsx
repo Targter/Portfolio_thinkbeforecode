@@ -19,7 +19,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="p-5  lg:rounded-2xl rounded-xl lg:w-[360px] w-[80%] bg-[rgb(21 16 48)] bgColor lg:ml-0 ml-8 lg:flex-none flex flex-col lg:items-start items-center overflow-hidden"
+        className="p-5  lg:rounded-2xl rounded-xl lg:w-[360px] w-[80%] bg-[rgb(21 16 48)] bg-[#1d1836] lg:ml-0 ml-8 lg:flex-none flex flex-col lg:items-start items-center overflow-hidden"
       >
         <div className="relative lg:w-[100%] w-[80px] lg:h-[230px] h-[120px]">
           <img
@@ -67,6 +67,7 @@ const Box5Container = () => {
       <motion.div
         variants={textVariant()}
         className="overflow-hidden lg:flex-none flex flex-col lg:items-start items-center lg:mt-0 mt-11"
+        id="Projects"
       >
         <p className="text-sm text-white md:text-lg">My work</p>
         <h2 className="md:text-6xl text-4xl text-white md:mt-5 mt-2 md:mb-4 mb-1.5 font-bold md:font-extrabold md:w-full">
