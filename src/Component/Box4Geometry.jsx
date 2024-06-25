@@ -43,7 +43,7 @@ const Box4Geometry = ({ imgUrl }) => {
           <directionalLight position={[1, 1, 1]} />
           <Ball imgUrl={imgUrl} />
         </Suspense>
-        <Preload all />
+{/*         <Preload all /> */}
       </Canvas>
     </Suspense>
   );
