@@ -6,6 +6,7 @@ import { motion } from "framer-motion-3d";
 // import { animate, useMotionValue } from "framer-motion";
 function Model(props) {
   // const { section, animation } = props;
+  const { url } = props;
   const group = useRef();
   // const [isScrolling, setIsScrolling] = useState("false");
   // Load the GLTF model and extract nodes, materials, and animations
@@ -16,7 +17,7 @@ function Model(props) {
 
   // // console.log("these are the animation", animations);
 
-  const { nodes, materials, animations } = useGLTF("/scene.gltf");
+  const { nodes, materials, animations } = useGLTF(url);
   const { ref, actions, names } = useAnimations(animations);
   // const { viewport } = useThree();
 
@@ -50,19 +51,7 @@ function Model(props) {
 
   return (
     <group position={[0, -1, -3]} ref={ref} zIndex={0}>
-      <motion.group
-        ref={group}
-        {...props}
-        dispose={null}
-        position={[0, 0, 0]}
-        // zIndex={1000}
-        renderOrder={2}
-        // animate={{
-        //   y: section === 1 ? -viewport.height : 0,
-        //   z: section === 1 ? 2 : 0,
-        //   x: section === 1 ? 2 : 0,
-        // }}
-      >
+      <motion.group ref={group} {...props} dispose={null} position={[0, 0, 0]}>
         <group name="Sketchfab_Scene">
           <group
             name="Sketchfab_model"
@@ -87,7 +76,6 @@ function Model(props) {
                         geometry={nodes.Object_83.geometry}
                         material={materials.Casual_Male}
                         skeleton={nodes.Object_83.skeleton}
-                        zIndex={9999}
                       />
                     </group>
                   </group>

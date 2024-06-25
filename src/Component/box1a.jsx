@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { ScrollControls, Scroll, OrbitControls } from "@react-three/drei";
 import Model from "./Model";
 import Interface from "./Interface";
+import { ContactShadows } from "@react-three/drei";
 import { Suspense, useState } from "react";
 import ScrollManager from "./ScrollManager";
 
@@ -24,26 +25,33 @@ const Box1a = () => {
           />
         </svg>
       </span>
-      <Canvas
-        shadows
-        camera={{ position: [0, 0, 0], fov: 40 }}
-        className="z-1 absolute top-[-30px] right-[30px]"
+      <Suspense
+        fallback={<span className="bg-red-600 w-3 h-8">loading...</span>}
       >
-        <ambientLight intensity={1} />
-        <directionalLight
-          position={[0.9, 0.5, -2]}
-          castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-          shadow-camera-far={1}
-          shadow-camera-near={0.1}
-        />
-        {/* <group> */}
-        <Suspense fallback={null}>
-          <OrbitControls enabled={false} />
-          <Model></Model>
-        </Suspense>
-      </Canvas>
+        <Canvas
+          frameloop="demand"
+          shadows
+          camera={{ position: [0, 0, 0], fov: 40 }}
+          className="z-1 absolute top-[-30px] right-[30px]"
+        >
+          <ambientLight intensity={1} />
+          <directionalLight
+            position={[0.9, 0.5, -2]}
+            castShadow
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
+            shadow-camera-far={1}
+            shadow-camera-near={0.1}
+          />
+          {/* <group> */}
+          <Suspense fallback={<Model url="/scene.gltf" />}>
+            <OrbitControls enabled={false} />
+
+            <Model url="/scene.gltf"></Model>
+            <ContactShadows />
+          </Suspense>
+        </Canvas>
+      </Suspense>
     </>
   );
 };
