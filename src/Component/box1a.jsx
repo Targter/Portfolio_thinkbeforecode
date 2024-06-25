@@ -5,9 +5,16 @@ import Interface from "./Interface";
 import { ContactShadows } from "@react-three/drei";
 import { Suspense, useState } from "react";
 import ScrollManager from "./ScrollManager";
+import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 const Box1a = () => {
   const [section, setsection] = useState(0);
+
+  const [canvasLoaded, setCanvasLoaded] = useState(true);
+
+  const handleCanvasError = () => {
+    setCanvasLoaded(false);
+  };
   return (
     <>
       <span className="h-[290px] absolute lg:top-[-100px] top-[-80px] lg:right-[100px] right-[100px]">
@@ -25,33 +32,43 @@ const Box1a = () => {
           />
         </svg>
       </span>
-      <Suspense
-        fallback={<span className="bg-red-600 w-3 h-8">loading...</span>}
-      >
-        <Canvas
-          frameloop="demand"
-          shadows
-          camera={{ position: [0, 0, 0], fov: 40 }}
-          className="z-1 absolute top-[-30px] right-[30px]"
-        >
-          <ambientLight intensity={1} />
-          <directionalLight
-            position={[0.9, 0.5, -2]}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-camera-far={1}
-            shadow-camera-near={0.1}
-          />
-          {/* <group> */}
-          <Suspense fallback={<Model url="/scene.gltf" />}>
-            <OrbitControls enabled={false} />
 
-            <Model url="/scene.gltf"></Model>
-            <ContactShadows />
-          </Suspense>
-        </Canvas>
-      </Suspense>
+      {canvasLoaded ? (
+        <Suspense
+          fallback={<span className="bg-red-600 w-3 h-8">loading...</span>}
+        >
+          <Canvas
+            frameloop="demand"
+            shadows
+            camera={{ position: [0, 0, 0], fov: 40 }}
+            className="z-1 absolute top-[-30px] right-[30px]"
+            onCreated={({ gl }) => {
+              gl.domElement.addEventListener("error", handleCanvasError);
+            }}
+          >
+            <ambientLight intensity={1} />
+            <directionalLight
+              position={[0.9, 0.5, -2]}
+              castShadow
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
+              shadow-camera-far={1}
+              shadow-camera-near={0.1}
+            />
+            {/* <group> */}
+            <Suspense fallback={<Model url="/scene.gltf" />}>
+              <OrbitControls enabled={false} />
+
+              <Model url="/scene.gltf"></Model>
+              <ContactShadows />
+            </Suspense>
+          </Canvas>
+        </Suspense>
+      ) : (
+        <div className="bg-red-600 w-full h-full flex justify-center items-center text-white">
+          Canvas could not be loaded . Please try again later
+        </div>
+      )}
     </>
   );
 };
