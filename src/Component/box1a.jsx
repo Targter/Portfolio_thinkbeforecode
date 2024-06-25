@@ -13,7 +13,7 @@ const Box1a = () => {
   const [canvasLoaded, setCanvasLoaded] = useState(true);
 
   const handleCanvasError = () => {
-    setCanvasLoaded(false);
+    setCanvasLoaded(!canvasLoaded);
   };
 
   const [start, setStart] = useState(false);
