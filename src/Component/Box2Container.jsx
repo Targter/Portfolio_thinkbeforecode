@@ -6,8 +6,6 @@ import { Tilt } from "react-tilt";
 import { motion } from "framer-motion-3d";
 import { services } from "./ALLData.js";
 import { fadeIn, textVariant } from "./MotionValue.js";
-import StarWrapper from "./StarWrapper.jsx";
-
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
     <motion.div

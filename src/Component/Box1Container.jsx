@@ -1,25 +1,19 @@
-import { Suspense, useLayoutEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Box1a from "./box1a";
-// import gsap from "gsap";
-// import ScrollTrigger from "gsap/ScrollTrigger";
 const Box1Container = () => {
-  const modelref = useRef();
-
-  const handleDownload = () => {
-    const pdfUrl = "public/AbhayResume.pdf";
-    const link = document.createElement("a");
-    link.href = pdfUrl; // Replace with the actual path to your file
-    link.download = "AbhayBansal_Resume.pdf"; // The name of the downloaded file
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownload = () => {
+  //   const pdfUrl = "public/AbhayResume.pdf";
+  //   const link = document.createElement("a");
+  //   link.href = pdfUrl; // Replace with the actual path to your file
+  //   link.download = "AbhayBansal_Resume.pdf"; // The name of the downloaded file
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
     <>
       <Navbar />
-      {/* mainbody */}
       <div
         className="h-auto lg:w-auto w-[1000px] flex lg:flex-row flex-col lg:items-center justify-start items-start overflow-hidden z-50 text-white mb-[120px] "
         id="Home"
@@ -37,7 +31,7 @@ const Box1Container = () => {
           <div className="myinfo w-full lg:h-[100px] h-[50px] flex justify-center">
             <button
               className="bg-[#2B2D42] lg:h-[70px] h-[30px] lg:w-[300px] w-[150px] rounded-lg lg:text-xl text-sm  lg:font-bold font-light hover:bg-gray-700 hover:text-white"
-              onClick={handleDownload}
+              // onClick={handleDownload}
             >
               Download Resume
             </button>
@@ -48,21 +42,6 @@ const Box1Container = () => {
           </div>
         </div>
         <div className="modeldiv  h-[300px] overflow-hidden  w-[450px] relative top-0 ">
-          {/* <span className="h-[290px] absolute lg:top-[38%] top-[45%] lg:right-[80px] right-[0px]">
-            <svg
-              viewBox="10 0 200 100"
-              className="h-auto flex justify-center items-center"
-              xmlns="http://www.w3.org/2000/svg"
-              width={290}
-              height={350}
-            >
-              <path
-                fill="#fff"
-                d="M71.7,-19.3C80.2,2.7,65.4,36.2,40.9,53.3C16.4,70.4,-17.9,71.1,-40.7,54.8C-63.5,38.5,-74.9,5.2,-66.2,-17.1C-57.5,-39.4,-28.7,-50.7,1.4,-51.2C31.6,-51.7,63.3,-41.3,71.7,-19.3Z"
-                transform="translate(100 100)"
-              />
-            </svg>
-          </span> */}
           <Box1a />
         </div>
       </div>

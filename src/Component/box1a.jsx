@@ -1,29 +1,48 @@
 import { Canvas } from "@react-three/fiber";
-import { ScrollControls, Scroll, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
-import Interface from "./Interface";
-import { ContactShadows } from "@react-three/drei";
 import { Suspense, useState } from "react";
-import ScrollManager from "./ScrollManager";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
-import { useControls } from "leva";
+const LoadingIndicator = () => {
+  return <div className="bg-green-600 w-3 h-8">Loading...</div>;
+};
+
 const Box1a = () => {
-  const [section, setsection] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [canvasLoaded, setCanvasLoaded] = useState(true);
-
-  const handleCanvasError = () => {
-    setCanvasLoaded(!canvasLoaded);
+  const handleModelLoaded = () => {
+    setIsLoading(!isLoading);
   };
 
-  const [start, setStart] = useState(false);
-
-  // leva
-
-  const { name, aNumber } = useControls({ name: "world", aNumber: 0 });
   return (
     <>
-      <span className="h-[290px] absolute lg:top-[-100px] top-[-80px] lg:right-[100px] right-[100px]">
+      <Canvas
+        shadows
+        camera={{ position: [0, 0, 0], fov: 40 }}
+        className="z-1 absolute top-[-30px] right-[30px]"
+      >
+        <ambientLight intensity={1} />
+        <directionalLight
+          position={[0.9, 0.5, -2]}
+          castShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-far={1}
+          shadow-camera-near={0.1}
+        />
+        {/* <Suspense fallback={null}> */}
+        <Model url="/scene.gltf" onLoaded={handleModelLoaded} />
+        <OrbitControls enabled={false} />
+        {/* </Suspense> */}
+      </Canvas>
+      {isLoading && <LoadingIndicator />}
+    </>
+  );
+};
+
+export default Box1a;
+
+{
+  /* <span className="h-[290px] absolute lg:top-[-100px] top-[-80px] lg:right-[100px] right-[100px]">
         <svg
           viewBox="10 0 200 100"
           className="h-auto flex justify-center items-center"
@@ -37,69 +56,5 @@ const Box1a = () => {
             transform="translate(100 100)"
           />
         </svg>
-      </span>
-      {/* <Suspense
-        fallback={<span className="bg-green-600 w-3 h-8">loading...</span>}
-      > */}
-      {/* {canvasLoaded ? ( */}
-      <Canvas
-        frameloop="demand"
-        shadows
-        camera={{ position: [0, 0, 0], fov: 40 }}
-        className="z-1 absolute top-[-30px] right-[30px]"
-        onCreated={({ gl }) => {
-          gl.domElement.addEventListener("error", handleCanvasError);
-        }}
-      >
-        <ambientLight intensity={1} />
-        <directionalLight
-          position={[0.9, 0.5, -2]}
-          castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-          shadow-camera-far={1}
-          shadow-camera-near={0.1}
-        />
-        {/* <group> */}
-        <Suspense
-          fallback={<div className="bg-green-600 w-3 h-8">Loading....</div>}
-        >
-          <OrbitControls enabled={false} />
-          <Model url="/scene.gltf"></Model>
-
-          <ContactShadows />
-        </Suspense>
-      </Canvas>
-      {/* </Suspense> */}
-      {/* // ) : ( //{" "}
-      <div className="bg-red-600 w-[250px] h-[250px] flex justify-center items-center text-white">
-        // Canvas could not be loaded . Please try again later //{" "}
-      </div>
-      // )} */}
-    </>
-  );
-};
-
-export default Box1a;
-
-// <ScrollControls
-// damping={0.2}
-// maxSpeed={0.5}
-// pages={7.4}
-// // intensity={1}
-// >
-// <ScrollManager
-//   section={section}
-//   onsectionchange={setsection}
-// ></ScrollManager>
-// <Scroll>
-//   {/* <Box1a></Box1a> */}
-//   {/* <Model
-//     section={section}
-//     animation={section === 0 ? "Waving" : "Jumping"}
-//   /> */}
-// </Scroll>
-// <Scroll html>
-//   <Interface></Interface>
-// </Scroll>
-// </ScrollControls>
+      // </span> */
+}
