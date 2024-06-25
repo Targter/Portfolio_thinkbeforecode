@@ -36,39 +36,40 @@ const Box1a = () => {
       </span>
 
       <Suspense
-        fallback={<span className="bg-red-600 w-3 h-8">loading...</span>}
+        fallback={<span className="bg-green-600 w-3 h-8">loading...</span>}
       >
-        <Canvas
-          frameloop="demand"
-          shadows
-          camera={{ position: [0, 0, 0], fov: 40 }}
-          className="z-1 absolute top-[-30px] right-[30px]"
-          onCreated={({ gl }) => {
-            gl.domElement.addEventListener("error", handleCanvasError);
-          }}
-        >
-          <ambientLight intensity={1} />
-          <directionalLight
-            position={[0.9, 0.5, -2]}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-camera-far={1}
-            shadow-camera-near={0.1}
-          />
-          {/* <group> */}
-          <Suspense fallback={<Model url="/scene.gltf" />}>
-            <OrbitControls enabled={false} />
-            {canvasLoaded ? (
+        {canvasLoaded ? (
+          <Canvas
+            frameloop="demand"
+            shadows
+            camera={{ position: [0, 0, 0], fov: 40 }}
+            className="z-1 absolute top-[-30px] right-[30px]"
+            onCreated={({ gl }) => {
+              gl.domElement.addEventListener("error", handleCanvasError);
+            }}
+          >
+            <ambientLight intensity={1} />
+            <directionalLight
+              position={[0.9, 0.5, -2]}
+              castShadow
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
+              shadow-camera-far={1}
+              shadow-camera-near={0.1}
+            />
+            {/* <group> */}
+            <Suspense fallback={<Model url="/scene.gltf" />}>
+              <OrbitControls enabled={false} />
               <Model url="/scene.gltf"></Model>
-            ) : (
-              <div className="bg-red-600 w-full h-full flex justify-center items-center text-white">
-                Canvas could not be loaded . Please try again later
-              </div>
-            )}
-            <ContactShadows />
-          </Suspense>
-        </Canvas>
+
+              <ContactShadows />
+            </Suspense>
+          </Canvas>
+        ) : (
+          <div className="bg-red-600 w-[250px] h-[250px] flex justify-center items-center text-white">
+            Canvas could not be loaded . Please try again later
+          </div>
+        )}
       </Suspense>
     </>
   );
