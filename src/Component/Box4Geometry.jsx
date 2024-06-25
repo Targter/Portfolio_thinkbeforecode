@@ -37,7 +37,7 @@ const Box4Geometry = ({ imgUrl }) => {
   return (
     <Suspense fallback={<span className="bg-red-600 w-3 h-8">loading...</span>}>
       <Canvas frameloop="demand" dpr={[1, 2]}>
-        <Suspense fallback={<Ball />}>
+        <Suspense>
           <OrbitControls enableZoom={false} />
           <ambientLight intensity={0.1} />
           <directionalLight position={[1, 1, 1]} />
