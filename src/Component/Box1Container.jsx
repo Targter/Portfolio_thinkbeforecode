@@ -1,19 +1,9 @@
-import Navbar from "./Navbar";
-import Box1a from "./box1a";
+import React, { lazy, Suspense } from "react";
+const Animationcomp = lazy(() => import("./box1a"));
 const Box1Container = () => {
-  // const handleDownload = () => {
-  //   const pdfUrl = "public/AbhayResume.pdf";
-  //   const link = document.createElement("a");
-  //   link.href = pdfUrl; // Replace with the actual path to your file
-  //   link.download = "AbhayBansal_Resume.pdf"; // The name of the downloaded file
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
-
+  console.log("container is printing");
   return (
     <>
-      <Navbar />
       <div
         className="h-auto lg:w-auto w-[1000px] flex lg:flex-row flex-col lg:items-center justify-start items-start overflow-hidden z-50 text-white mb-[120px] "
         id="Home"
@@ -36,13 +26,15 @@ const Box1Container = () => {
               Download Resume
             </button>
           </div>
-          <div className="myinfo lg:w-3/12 w-full lg:h-[200px] h-auto text-sm text-center lg:p-0 p-2">
+          <div className="lg:w-3/12 w-full lg:h-[200px] h-auto text-sm text-center lg:p-0 p-2">
             I'm a Full Stack Software Engineer with experience in Website,
             Mobile, and Software development. Check out my projects and skills.
           </div>
         </div>
         <div className="modeldiv  h-[300px] overflow-hidden  w-[450px] relative top-0 ">
-          <Box1a />
+          <Suspense fallback={<div>Loading....</div>}>
+            <Animationcomp />
+          </Suspense>
         </div>
       </div>
     </>
@@ -50,86 +42,3 @@ const Box1Container = () => {
 };
 
 export default Box1Container;
-
-{
-  /* <nav class="flex ">
-<div class="max-w-screen-xl lg:w-1/2 px-4 py-3 ">
-  <div class="flex items-center ml-[100px]">
-    <ul class="flex flex-row font-bolder mt-0 space-x-8 rtl:space-x-reverse text-lg">
-      <li>
-        <a
-          href="#Home"
-          class="text-gray-900 dark:text-white hover:underline"
-          aria-current="page"
-        >
-          Home
-        </a>
-      </li>
-      <li>
-        <a
-          href="#Projects"
-          class="text-gray-900 dark:text-white hover:underline"
-        >
-          MyWork
-        </a>
-      </li>
-      <li>
-        <a
-          href="#WorkExperience"
-          class="text-gray-900 dark:text-white hover:underline"
-        >
-          Work Experience
-        </a>
-      </li>
-      <li>
-        <a
-          href="#Projects"
-          class="text-gray-900 dark:text-white hover:underline"
-        >
-          Projects
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
-
-
-
-
-// navtag
-<div class="max-w-screen-xl w-1/2 px-4 py-3  ">
-  <div class="flex justify-end items-center">
-    <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
-      <li className="w-6 h-6">
-        <a
-          href="https://www.linkedin.com/in/abhaybansal0003/"
-          target="_blank"
-        >
-          <FaLinkedin className="w-[100%] h-[100%]" />
-        </a>
-      </li>
-      <li className="w-6 h-6">
-        <a href="mailto:bansalabhay00@gmail.com">
-          <IoMail className="w-[100%] h-[100%]" />
-        </a>
-      </li>
-      <li className="w-6 h-6">
-        <a href="https://x.com/AbCheckk" target="_blank">
-          <FaSquareXTwitter className="w-[100%] h-[100%]" />
-        </a>{" "}
-      </li>
-      <li className="w-6 h-6">
-        <a
-          href="https://www.facebook.com/abhay.bansal.94214"
-          target="_blank"
-        >
-          <FaFacebook className="w-[100%] h-[100%]" />
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-</nav> */
-}
