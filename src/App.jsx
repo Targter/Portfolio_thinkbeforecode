@@ -3,11 +3,11 @@ import "./App.css";
 // import Box1a from "./Component/box1a";
 import Navbar from "./Component/Navbar";
 import Box1Container from "./Component/Box1Container";
-// import Box2Container from "./Component/Box2Container";
-// import Box3Container from "./Component/Box3Container";
-// import Box4Container from "./Component/Box4Container";
-// import Box5Container from "./Component/Box5Container";
-// import Box6container from "./Component/Box6Container";
+import Box2Container from "./Component/Box2Container";
+import Box3Container from "./Component/Box3Container";
+import Box4Container from "./Component/Box4Container";
+import Box5Container from "./Component/Box5Container";
+import Box6container from "./Component/Box6Container";
 // import StarCanvas from "./Component/StarBackground";
 // i am trying to put a 3d model thats why i am doing this :
 function App() {
@@ -16,11 +16,11 @@ function App() {
       <div className="bg-[#000000] h-auto w-full overflow-hidden containerr">
         <Navbar />
         <Box1Container />
-        {/* <Box2Container />
+        <Box2Container />
         <Box3Container />
         <Box4Container />
         <Box5Container />
-        <Box6container /> */}
+        <Box6container />
       </div>
       {/* <StarCanvas /> */}
     </>
