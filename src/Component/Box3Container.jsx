@@ -8,8 +8,10 @@ import { motion } from "framer-motion";
 import { staggerContainer, textVariant } from "./MotionValue";
 import { experiences } from "./ALLData";
 import StarWrapper from "./StarWrapper";
+import React from "react";
 
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard = React.memo(({ experience }) => {
+  // const { experience } = props;
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -54,9 +56,10 @@ const ExperienceCard = ({ experience }) => {
       </ul>
     </VerticalTimelineElement>
   );
-};
+});
 
 const Box3Container = () => {
+  console.log("container 3");
   return (
     <>
       <motion.div

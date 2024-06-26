@@ -1,15 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-// import Model from "./Model";
-import { useState } from "react";
-
-import React, { useEffect, useRef, lazy, Suspense } from "react";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
-// import Model from "./Model";
-
+import React, { lazy, Suspense } from "react";
 const ModelLoader = lazy(() => import("./Model"));
 
-//
 const Box1a = () => {
   return (
     <>
@@ -44,10 +37,10 @@ const Box1a = () => {
             shadow-camera-far={1}
             shadow-camera-near={0.1}
           />
-{/*           <Suspense fallback={null}> */}
+          <Suspense fallback={null}>
             <ModelLoader url="/scene.gltf" />
             <OrbitControls enabled={false} />
-{/*           </Suspense> */}
+          </Suspense>
         </Canvas>
       </Suspense>
     </>

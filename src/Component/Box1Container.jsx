@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 const Animationcomp = lazy(() => import("./box1a"));
 const Box1Container = () => {
-  console.log("container is printing");
+  console.log("container 1");
   return (
     <>
       <div
@@ -21,7 +21,6 @@ const Box1Container = () => {
           <div className="myinfo w-full lg:h-[100px] h-[50px] flex justify-center">
             <button
               className="bg-[#2B2D42] lg:h-[70px] h-[30px] lg:w-[300px] w-[150px] rounded-lg lg:text-xl text-sm  lg:font-bold font-light hover:bg-gray-700 hover:text-white"
-              // onClick={handleDownload}
             >
               Download Resume
             </button>

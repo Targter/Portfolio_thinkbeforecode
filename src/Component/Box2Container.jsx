@@ -71,6 +71,7 @@ const About = () => {
               title={service.title}
               index={index}
               icon={service.icon}
+              key={index}
             />
           ))}
         </div>

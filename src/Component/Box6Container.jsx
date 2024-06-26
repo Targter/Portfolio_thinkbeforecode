@@ -1,4 +1,5 @@
 const Box6container = () => {
+  console.log("container 6");
   return (
     <>
       <div className=" w-full h-auto sm:h-screen flex items-center justify-start sm:justify-center text-white bg-black pt-24 pl-2  sm:pl-11 overflow-hidden">

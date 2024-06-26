@@ -1,17 +1,21 @@
 // import { techimg } from "./MotionValue";
-import Box4Geometry from "./Box4Geometry";
+import { lazy } from "react";
+// import Box4Geometry from "./Box4Geometry";
 import { techimg } from "./MotionValue";
 import StarWrapper from "./StarWrapper";
+import { useMemo } from "react";
+
+const BallModel = lazy(() => import("./Box4Geometry"));
 const Box4container = () => {
-  const arr = [1, 2, 3, 4, 5, 6, 6, 7, 8, 0, 1, 2, 3];
-  // const arr = [1];
-  console.log(techimg);
+  const memoizedTechimg = useMemo(() => techimg, []);
+  console.log("container 4");
+
   return (
     <>
       <div className="flex flex-row flex-wrap justify-center lg:gap-10  gap-4 mt-11">
-        {techimg.map((item) => (
-          <div className="lg:w-28 w-16 lg:h-28 h-16 ">
-            <Box4Geometry imgUrl={item.imgurl} key={item.name} />
+        {memoizedTechimg.map((item, index) => (
+          <div className="lg:w-28 w-16 lg:h-28 h-16 " key={index}>
+            <BallModel imgUrl={item.imgurl} key={item.name} />
           </div>
         ))}
       </div>

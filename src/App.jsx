@@ -22,7 +22,6 @@ function App() {
         <Box5Container />
         <Box6container />
       </div>
-      {/* <StarCanvas /> */}
     </>
   );
 }
