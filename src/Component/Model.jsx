@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
 // import { animate, useMotionValue } from "framer-motion";
+
 function Model(props) {
   const { url } = props;
   const group = useRef();
@@ -13,12 +14,14 @@ function Model(props) {
     if (actions[names[16]]) {
       actions[names[16]].reset().play();
     }
+
     return () => {
       if (names[16] && actions[[names[16]]]) {
         actions[names[16]].stop();
       }
     };
   }, [names, actions]);
+
   return (
     <group position={[0, -1, -3]} ref={ref} zIndex={0}>
       <motion.group ref={group} dispose={null} position={[0, 0, 0]}>
