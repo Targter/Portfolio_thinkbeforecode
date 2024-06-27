@@ -1,12 +1,33 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import React, { lazy, Suspense } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 const ModelLoader = lazy(() => import("./Model"));
 
 const Box1a = () => {
+  const [webGLSupported, setWebGLSupported] = useState(true);
+
+  useEffect(() => {
+    if (!window.WebGLRenderingContext) {
+      setWebGLSupported(false);
+    } else {
+      const canvas = document.createElement("canvas");
+      const context =
+        canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+      if (!context) {
+        setWebGLSupported(false);
+      }
+    }
+  }, []);
+
+  if (!webGLSupported) {
+    return <div>Your device does not support WebGL.</div>;
+  }
+
   return (
     <>
-{/*       <span className="h-[290px] absolute lg:top-[-100px] top-[-80px] lg:right-[100px] right-[100px]">
+      {/* <span className="h-[290px] absolute lg:top-[-100px] top-[-80px] lg:right-[100px] right-[100px]">
         <svg
           viewBox="10 0 200 100"
           className="h-auto flex justify-center items-center"
@@ -38,7 +59,7 @@ const Box1a = () => {
           shadow-camera-near={0.1}
         />
         <Suspense fallback={null}>
-{/*           <ModelLoader url="/scene.gltf" /> */}
+          <ModelLoader url="/scene.gltf" />
           <OrbitControls enabled={false} />
         </Suspense>
       </Canvas>

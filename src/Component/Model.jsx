@@ -22,6 +22,11 @@ function Model(props) {
     };
   }, [names, actions]);
 
+  //
+
+  if (!nodes || !materials || !animations) {
+    return null;
+  }
   return (
     <group position={[0, -1, -3]} ref={ref} zIndex={0}>
       <motion.group ref={group} dispose={null} position={[0, 0, 0]}>
