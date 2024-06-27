@@ -38,7 +38,7 @@ const Box1a = () => {
           shadow-camera-near={0.1}
         />
         <Suspense fallback={null}>
-          <ModelLoader url="/scene.gltf" />
+{/*           <ModelLoader url="/scene.gltf" /> */}
           <OrbitControls enabled={false} />
         </Suspense>
       </Canvas>
