@@ -26,7 +26,7 @@ const Box1a = () => {
       <Canvas
         shadows
         camera={{ position: [0, 0, 0], fov: 40 }}
-        className="z-1 absolute top-[-30px] right-[30px] bg-slate-600"
+        className="z-1 absolute top-[-30px] right-[30px] bg-slate-600 w-full h-full"
       >
         <ambientLight intensity={1} />
         <directionalLight
