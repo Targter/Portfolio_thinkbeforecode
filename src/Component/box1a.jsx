@@ -6,7 +6,7 @@ const ModelLoader = lazy(() => import("./Model"));
 const Box1a = () => {
   return (
     <>
-      <span className="h-[290px] absolute lg:top-[-100px] top-[-80px] lg:right-[100px] right-[100px]">
+{/*       <span className="h-[290px] absolute lg:top-[-100px] top-[-80px] lg:right-[100px] right-[100px]">
         <svg
           viewBox="10 0 200 100"
           className="h-auto flex justify-center items-center"
@@ -20,7 +20,7 @@ const Box1a = () => {
             transform="translate(100 100)"
           />
         </svg>
-      </span>
+      </span> */}
 
       {/* <Suspense fallback={<div> LoadingModel.....</div>}> */}
       <Canvas
