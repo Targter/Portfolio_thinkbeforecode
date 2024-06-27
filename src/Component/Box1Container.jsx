@@ -19,9 +19,7 @@ const Box1Container = () => {
           </div>
 
           <div className="myinfo w-full lg:h-[100px] h-[50px] flex justify-center">
-            <button
-              className="bg-[#2B2D42] lg:h-[70px] h-[30px] lg:w-[300px] w-[150px] rounded-lg lg:text-xl text-sm  lg:font-bold font-light hover:bg-gray-700 hover:text-white"
-            >
+            <button className="bg-[#2B2D42] lg:h-[70px] h-[30px] lg:w-[300px] w-[150px] rounded-lg lg:text-xl text-sm  lg:font-bold font-light hover:bg-gray-700 hover:text-white">
               Download Resume
             </button>
           </div>
@@ -30,7 +28,7 @@ const Box1Container = () => {
             Mobile, and Software development. Check out my projects and skills.
           </div>
         </div>
-        <div className="modeldiv  h-[300px] overflow-hidden  w-[450px] relative top-0 ">
+        <div className="modeldiv  h-[300px] overflow-hidden  w-[450px] relative top-0 bg-red-400 ">
           <Suspense fallback={<div>Loading....</div>}>
             <Animationcomp />
           </Suspense>

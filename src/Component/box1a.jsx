@@ -22,27 +22,27 @@ const Box1a = () => {
         </svg>
       </span>
 
-      <Suspense fallback={<div> LoadingModel.....</div>}>
-        <Canvas
-          shadows
-          camera={{ position: [0, 0, 0], fov: 40 }}
-          className="z-1 absolute top-[-30px] right-[30px]"
-        >
-          <ambientLight intensity={1} />
-          <directionalLight
-            position={[0.9, 0.5, -2]}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-camera-far={1}
-            shadow-camera-near={0.1}
-          />
-          <Suspense fallback={null}>
-            <ModelLoader url="/scene.gltf" />
-            <OrbitControls enabled={false} />
-          </Suspense>
-        </Canvas>
-      </Suspense>
+      {/* <Suspense fallback={<div> LoadingModel.....</div>}> */}
+      <Canvas
+        shadows
+        camera={{ position: [0, 0, 0], fov: 40 }}
+        className="z-1 absolute top-[-30px] right-[30px] bg-slate-600"
+      >
+        <ambientLight intensity={1} />
+        <directionalLight
+          position={[0.9, 0.5, -2]}
+          castShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-far={1}
+          shadow-camera-near={0.1}
+        />
+        <Suspense fallback={null}>
+          <ModelLoader url="/scene.gltf" />
+          <OrbitControls enabled={false} />
+        </Suspense>
+      </Canvas>
+      {/* </Suspense> */}
     </>
   );
 };
