@@ -10,17 +10,17 @@ function Model(props) {
   const { nodes, materials, animations } = useGLTF(url);
   const { ref, actions, names } = useAnimations(animations);
 
-  useEffect(() => {
-    if (actions[names[16]]) {
-      actions[names[16]].reset().play();
-    }
+  // useEffect(() => {
+  //   if (actions[names[16]]) {
+  //     actions[names[16]].reset().play();
+  //   }
 
-    return () => {
-      if (names[16] && actions[[names[16]]]) {
-        actions[names[16]].stop();
-      }
-    };
-  }, [names, actions]);
+  //   return () => {
+  //     if (names[16] && actions[[names[16]]]) {
+  //       actions[names[16]].stop();
+  //     }
+  //   };
+  // }, [names, actions]);
 
   //
 
