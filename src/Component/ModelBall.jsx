@@ -3,7 +3,7 @@ import { Decal, Float, useTexture } from "@react-three/drei";
 const Ball = (prop) => {
   const [decal] = useTexture([prop.imgUrl]);
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={1}>
+    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
