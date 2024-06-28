@@ -3,27 +3,85 @@ import { OrbitControls } from "@react-three/drei";
 import React, { lazy, Suspense } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-const ModelLoader = lazy(() => import("./Model"));
+import CanvasLoader from "./CanvasLoader";
+// import ErrorBoun
+import { Preload } from "@react-three/drei";
+// const ModelLoader = lazy(() => import("./Model"));
+// import Model from "./Model";
 
-const Box1a = () => {
-  const [webGLSupported, setWebGLSupported] = useState(true);
+import { useGLTF, useAnimations } from "@react-three/drei";
+import { motion } from "framer-motion-3d";
+import { compute } from "three/examples/jsm/nodes/Nodes.js";
+// import { animate, useMotionValue } from "framer-motion"
+
+function Model(props) {
+  const { url } = props;
+  // const group = useRef();
+
+  // const { nodes, materials, animations, scene } = useGLTF(url);
+  const { nodes, materials, animations, scene } = useGLTF("./scene.gltf");
+  // const { ref, actions, names } = useAnimations(animations);
+  // console.log("nodeScene", computer);
+  // console.log("animationName", computer.animations[16]);
+  // const { nodes, materials, animations,scene } = computer;
+  const { ref, actions, names } = useAnimations(animations);
 
   useEffect(() => {
-    if (!window.WebGLRenderingContext) {
-      setWebGLSupported(false);
-    } else {
-      const canvas = document.createElement("canvas");
-      const context =
-        canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-      if (!context) {
-        setWebGLSupported(false);
-      }
+    if (actions[names[16]]) {
+      console.log("actionscalled");
+      actions[names[16]].reset().play();
     }
-  }, []);
 
-  if (!webGLSupported) {
-    return <div>Your device does not support WebGL.</div>;
-  }
+    return () => {
+      if (names[16] && actions[[names[16]]]) {
+        actions[names[16]].stop();
+      }
+    };
+  }, [names, actions]);
+
+  return (
+    <mesh ref={ref}>
+      <ambientLight color={"white"} intensity={0.3} />
+      <pointLight intensity={1} />
+      <primitive
+        object={scene}
+        scale={1.7}
+        position={[6, -2.9, -1.5]}
+        rotation={[0.1, 1.7, -0.1]}
+      />
+
+      {/* <primitive object={nodes._rootJoint} /> */}
+      <group name="Object_82" scale={0.177} />
+      <skinnedMesh
+        castShadow
+        name="Object_83"
+        geometry={nodes.Object_83.geometry}
+        material={materials.Casual_Male}
+        skeleton={nodes.Object_83.skeleton}
+      />
+    </mesh>
+  );
+}
+
+const Box1a = () => {
+  // const [webGLSupported, setWebGLSupported] = useState(true);
+
+  // useEffect(() => {
+  //   if (!window.WebGLRenderingContext) {
+  //     setWebGLSupported(false);
+  //   } else {
+  //     const canvas = document.createElement("canvas");
+  //     const context =
+  //       canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+  //     if (!context) {
+  //       setWebGLSupported(false);
+  //     }
+  //   }
+  // }, []);
+
+  // if (!webGLSupported) {
+  //   return <div>Your device does not support WebGL.</div>;
+  // }
 
   return (
     <>
@@ -45,9 +103,11 @@ const Box1a = () => {
 
       {/* <Suspense fallback={<div> LoadingModel.....</div>}> */}
       <Canvas
+        frameloop="always"
         shadows
-        camera={{ position: [0, 0, 0], fov: 40 }}
-        className="z-1 absolute top-[-30px] right-[30px] bg-slate-600 w-full h-full"
+        dpr={[1, 2]}
+        camera={{ position: [20, 0, -2.5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
       >
         <ambientLight intensity={1} />
         <directionalLight
@@ -58,10 +118,16 @@ const Box1a = () => {
           shadow-camera-far={1}
           shadow-camera-near={0.1}
         />
-        <Suspense fallback={null}>
-          <ModelLoader url="/scene.gltf" />
-          <OrbitControls enabled={false} />
+        <Suspense fallback={<CanvasLoader />}>
+          {/* <ModelLoader url="/scene.gltf" /> */}
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Model url="/scene.gltf" />
         </Suspense>
+        <Preload all />
       </Canvas>
       {/* </Suspense> */}
     </>
@@ -69,7 +135,3 @@ const Box1a = () => {
 };
 
 export default Box1a;
-
-{
-  /* */
-}
