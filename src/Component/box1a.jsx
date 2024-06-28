@@ -103,7 +103,7 @@ const Box1a = () => {
 
       {/* <Suspense fallback={<div> LoadingModel.....</div>}> */}
       <Canvas
-        frameloop="demand"
+        frameloop="always"
         shadows
         dpr={[1, 2]}
         camera={{ position: [20, 0, -2.5], fov: 25 }}

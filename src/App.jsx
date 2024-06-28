@@ -21,7 +21,7 @@ function App() {
     <>
       <div className="bg-black h-auto w-full overflow-hidden containerr">
         <Navbar />
-{/*         <Box1Container /> */}
+        <Box1Container />
         <Box2Container />
         <Box3Container />
         <Box4Container />
