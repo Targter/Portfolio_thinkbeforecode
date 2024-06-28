@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import "./App.css";
 
-// import Box1a from "./Component/box1a";
+import Box1a from "./Component/box1a";
 import Navbar from "./Component/Navbar";
 import Box1Container from "./Component/Box1Container";
 import Box2Container from "./Component/Box2Container";
@@ -21,6 +21,7 @@ function App() {
     <>
       <div className="bg-black h-auto w-full overflow-hidden containerr">
         <Navbar />
+        <Box1a />
         <Box1Container />
         <Box2Container />
         <Box3Container />

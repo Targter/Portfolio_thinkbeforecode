@@ -31,7 +31,7 @@ const Box1Container = () => {
         </div>
 
         <div className="h-[500px] w-fullmt-[80px] z-11 mr-[180px]">
-          <Box1a />
+          {/* <Box1a /> */}
         </div>
       </div>
     </>
