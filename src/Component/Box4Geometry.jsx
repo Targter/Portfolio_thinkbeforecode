@@ -1,6 +1,8 @@
 import React, { Suspense, lazy, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+
+import CanvasLoader from "./CanvasLoader";
 import Ball from "./ModelBall";
 
 import { Preload } from "@react-three/drei";
